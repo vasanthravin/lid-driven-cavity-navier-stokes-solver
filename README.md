@@ -66,7 +66,7 @@ The **Lid-Driven Cavity** is a classical CFD benchmark problem. It consists of a
 | Left wall | $u = 0$, $v = 0$ |
 | Right wall | $u = 0$, $v = 0$ |
 
-![Boundary Conditions](images/fig1_boundary_conditions.png)
+![Boundary Conditions](images/fig1_boundary_conditions.jpg)
 *Fig. 1 — Boundary conditions for the lid-driven cavity problem.*
 
 ---
@@ -109,12 +109,12 @@ The flux entering a control volume equals the flux leaving it, making FVM inhere
 
 ### Indexing Convention
 
-![Indexing](images/fig2_indexing.png)
+![Indexing](images/fig2_indexing.jpg)
 *Fig. 2 — Indexing used for the control volume. `(i, j)` = P (centre), with E, W, N, S neighbours.*
 
 ### Control Volume
 
-![Control Volume](images/fig3_control_volume.png)
+![Control Volume](images/fig3_control_volume.jpg)
 *Fig. 3 — A sample control volume with the nodes and face velocities.*
 
 ---
@@ -185,7 +185,7 @@ $$
 
 The **SIMPLE** (Semi-Implicit Method for Pressure-Linked Equations) algorithm was developed by **Suhas Patankar and Brian Spalding** in the early 1970s.
 
-![SIMPLE Flowchart](images/fig4_simple_flowchart.png)
+![SIMPLE Flowchart](images/fig4_simple_flowchart.jpg)
 *Fig. 4 — Flowchart of the SIMPLE algorithm.*
 
 **Key characteristics:**
@@ -271,7 +271,7 @@ $$
 
 Normal interpolation of face velocities leads to **checkerboard pressure oscillations**. The **Rhie-Chow interpolation** (or Pressure-Weighted Interpolation Method) avoids this by using momentum-based interpolation for cell face mass fluxes.
 
-![Imaginary CV](images/fig5_imaginary_cv.png)
+![Imaginary CV](images/fig5_imaginary_cv.jpg)
 *Fig. 5 — Imaginary control volume with 'e' as the centre.*
 
 **Momentum equations at nodes P, E, and face e:**
@@ -355,28 +355,28 @@ Simulations were carried out on a **30×30 mesh grid** at **Re = 100** (unless o
 
 ### U-Velocity Contours
 
-![U-Velocity](images/fig6_u_velocity_contour.png)
+![U-Velocity](images/fig6_u_velocity_contour.jpg)
 *Fig. 6 — Contour plot of the u-velocity (Re = 100, 30×30 grid).*
 
 Maximum u-velocity is observed along the lid (north boundary). The horizontal velocity rapidly decreases toward the centre of the domain near the eye of the primary vortex.
 
 ### V-Velocity Contours
 
-![V-Velocity](images/fig7_v_velocity_contour.png)
+![V-Velocity](images/fig7_v_velocity_contour.jpg)
 *Fig. 7 — Contour plot of the v-velocity.*
 
 Maximum vertical velocity is at the top-left corner (where the fixed left wall meets the moving lid), and minimum is at the top-right corner.
 
 ### Pressure Contours
 
-![Pressure](images/fig8_pressure_contour.png)
+![Pressure](images/fig8_pressure_contour.jpg)
 *Fig. 8 — Contour plot of the pressure.*
 
 Maximum pressure occurs at the north-east corner (where velocity terminates) and minimum at the north-west corner (vacuum-like effect where velocity originates).
 
 ### Pressure with Velocity Vectors
 
-![Pressure + Vectors](images/fig9_pressure_velocity_vectors.png)
+![Pressure + Vectors](images/fig9_pressure_velocity_vectors.jpg)
 *Fig. 9 — Contour plot of pressure with velocity vectors overlaid.*
 
 ### Velocity Streamlines
@@ -398,27 +398,27 @@ The benchmark study by Ghia et al. on a **257×257 mesh grid** is used for compa
 
 #### U-Velocity along Vertical Centreline
 
-![U-Velocity Validation](images/fig11_u_velocity_centreline.png)
+![U-Velocity Validation](images/fig11_u_velocity_centreline.jpg)
 *Fig. 11 — U-velocity along the centre for Re = 100. Comparison with Ghia et al.*
 
 **Accuracy: ~70%** — the u-velocity profile matches the expected trend (starts at 0, slight negative slope until midpoint, rapid increase to lid velocity at the north boundary).
 
 #### V-Velocity along Horizontal Centreline
 
-![V-Velocity Validation](images/fig12_v_velocity_centreline.png)
+![V-Velocity Validation](images/fig12_v_velocity_centreline.jpg)
 *Fig. 12 — V-velocity along the centre for Re = 100. Comparison with Ghia et al.*
 
 **Accuracy: ~60%** — the v-velocity starts at 0, increases until the 1st quarter, decreases until the last quarter, then returns to 0.
 
 ### Comparison with ANSYS Fluent
 
-![Fluent Cavity](images/fig13_fluent_cavity.png)
+![Fluent Cavity](images/fig13_fluent_cavity.jpg)
 *Fig. 13 — Flow streamlines from ANSYS Fluent for the lid-driven cavity.*
 
-![Fluent Square Step](images/fig14_fluent_square_step.png)
+![Fluent Square Step](images/fig14_fluent_square_step.jpg)
 *Fig. 14 — Flow streamlines from ANSYS Fluent for the lid-driven cavity with a square step.*
 
-![Fluent Backward Step](images/fig15_fluent_backward_step.png)
+![Fluent Backward Step](images/fig15_fluent_backward_step.jpg)
 *Fig. 15 — Flow streamlines from ANSYS Fluent for flow with a backward-facing step.*
 
 ANSYS Fluent shows secondary vortices at both the bottom-right and bottom-left of the cavity. Due to solver accuracy limitations, the bottom-right secondary vortex is not captured in our Python solver.
@@ -525,6 +525,4 @@ Create an `images/` directory in the repo and upload the following files:
 
 ---
 
-<p align="center">
-  Made with ☕ and CFD
-</p>
+
